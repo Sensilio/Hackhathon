@@ -1,0 +1,18 @@
+Instructions to work on the Sensilio project from any computer:
+
+On a different computer:
+
+1. Clone the repository:
+   git clone git@github.com:Sensilio/Hackhathon.git
+   cd Hackhathon
+
+2. Set up SSH key (if not already done):
+   - Generate SSH key: ssh-keygen -t ed25519 -C "your_email@example.com"
+   - Add to GitHub: Copy ~/.ssh/id_ed25519.pub to GitHub Settings > SSH Keys
+
+3. Work and save:
+   git add .
+   git commit -m "Your changes"
+   git push
+
+Your project will be available on any computer with GitHub access!
