@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Sex Coach — Demo (Solo / Partner)</title>
+<style>
+  body { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial; margin: 0; padding: 0; background:#f6f7fb; color:#111; }
+  header { background:#111; color:#fff; padding:12px 16px; display:flex; align-items:center; gap:12px;}
+  header h1 { font-size:16px; margin:0; }
+  .container { padding:16px; max-width:1100px; margin:18px auto; }
+  .tabs { display:flex; gap:8px; margin-bottom:12px; }
+  .tabs button { padding:8px 12px; border-radius:8px; border:1px solid #ddd; background:#fff; cursor:pointer;}
+  .tabs button.active { background:#111; color:#fff; border-color:#111;}
+  .row { display:flex; gap:16px; }
+  .col { background:#fff; padding:12px; border-radius:10px; box-shadow:0 4px 12px rgba(10,10,10,0.06); flex:1; min-width:260px; }
+  .card { border-radius:8px; padding:12px; border:1px solid #eee; background:#fff; margin-bottom:10px; min-height:150px;}
+  .meta { font-size:12px; color:#666; margin-top:6px;}
+  .controls { display:flex; gap:8px; margin-top:8px; }
+  .controls button { flex:1; padding:10px; border-radius:8px; border:0; cursor:pointer; font-weight:600;}
+  .btn-like { background:#06b6d4; color:#fff;}
+  .btn-skip { background:#eee; }
+  .btn-nogo { background:#f97316; color:#fff;}
+  .small { font-size:13px; color:#444; }
+  .matches { margin-top:12px; }
+  textarea { width:100%; height:90px; padding:8px; border-radius:8px; border:1px solid #ddd; resize:vertical; }
+  footer { margin-top:18px; font-size:13px; color:#666;}
+  .badge { display:inline-block; background:#eef2ff; color:#3730a3; padding:4px 8px; border-radius:999px; font-weight:600; font-size:12px;}
+  .no-go { background:#fff6f3; border:1px dashed #fca5a5; padding:8px; border-radius:6px; color:#c2410c; }
+  .match-item { background:#ecfdf5; border:1px solid #bbf7d0; padding:8px; border-radius:6px; margin-bottom:6px; }
+  .deck-toggle { margin-bottom:8px; }
+  .topline { display:flex; justify-content:space-between; gap:12px; align-items:center; }
+  @media (max-width:900px){ .row{flex-direction:column} }
+</style>
+</head>
+<body>
+<header>
+  <h1>Sex Coach — Quick Demo</h1>
+  <div style="margin-left:auto; font-size:13px; color:#ddd">Local demo • 18+ only</div>
+</header>
+
+<div class="container">
+  <div class="tabs">
+    <button id="tabSolo" class="active">Solo</button>
+    <button id="tabPartner">Partner</button>
+  </div>
+
+  <div id="app">
+    <!-- SOLO -->
+    <div id="soloView" class="view">
+      <div class="row">
+        <div class="col" style="flex:1.2">
+          <div class="topline">
+            <div>
+              <div class="badge">Practice of the Day</div>
+              <h3 id="potdTitle" style="margin:6px 0 0 0">—</h3>
+            </div>
+            <div style="text-align:right">
+              <div class="small">Deck: <span id="soloDeckLabel">practices</span></div>
+              <div style="margin-top:6px">
+                <select id="soloDeckSelect">
+                  <option value="practices">Practices</option>
+                  <option value="toys">Toys</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" id="soloCard">
+            <h3 id="soloName">—</h3>
+            <div id="soloDesc" class="small">—</div>
+            <div class="meta" id="soloMeta"></div>
+            <div id="soloSafety" class="meta"></div>
+            <div class="controls">
+              <button class="btn-like" id="soloLike">LIKE</button>
+              <button class="btn-skip" id="soloSkip">SKIP</button>
+              <button class="btn-nogo" id="soloNoGo">NO-GO</button>
+            </div>
+          </div>
+
+          <h4>My Journal</h4>
+          <textarea id="soloJournal" placeholder="Write something..."></textarea>
+          <div style="margin-top:8px"><button id="soloSave">Save entry</button></div>
+        </div>
+
+        <div class="col">
+          <h3>Quick Info</h3>
+          <p class="small">This demo runs entirely locally. Use the deck toggle to switch between toys and practices. "Like" saves the item to your liked list. "No-go" will exclude the item.</p>
+
+          <h4>Liked (Solo)</h4>
+          <div id="soloLikes"></div>
+
+          <h4 style="margin-top:12px">No-go list</h4>
+          <div id="soloNoGoList"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PARTNER -->
+    <div id="partnerView" class="view" style="display:none">
+      <div class="row">
+        <div class="col">
+          <h3>You</h3>
+          <div class="deck-toggle">
+            Deck:
+            <select id="deckASelect">
+              <option value="toys">Toys</option>
+              <option value="practices" selected>Practices</option>
+            </select>
+          </div>
+          <div class="card" id="cardA">
+            <h3 id="nameA">—</h3>
+            <div id="descA" class="small">—</div>
+            <div class="meta" id="metaA"></div>
+            <div id="safetyA" class="meta"></div>
+            <div class="controls">
+              <button class="btn-like" id="likeA">LIKE</button>
+              <button class="btn-skip" id="skipA">SKIP</button>
+              <button class="btn-nogo" id="nogoA">NO-GO</button>
+            </div>
+          </div>
+
+          <h4>Liked (You)</h4>
+          <div id="likesA"></div>
+
+          <h4 style="margin-top:12px">Journal (You)</h4>
+          <textarea id="journalA" placeholder="Private note..."></textarea>
+          <div style="margin-top:8px"><button id="saveA">Save</button></div>
+        </div>
+
+        <div class="col">
+          <h3>Partner</h3>
+          <div class="deck-toggle">
+            Deck:
+            <select id="deckBSelect">
+              <option value="toys">Toys</option>
+              <option value="practices" selected>Practices</option>
+            </select>
+          </div>
+          <div class="card" id="cardB">
+            <h3 id="nameB">—</h3>
+            <div id="descB" class="small">—</div>
+            <div class="meta" id="metaB"></div>
+            <div id="safetyB" class="meta"></div>
+            <div class="controls">
+              <button class="btn-like" id="likeB">LIKE</button>
+              <button class="btn-skip" id="skipB">SKIP</button>
+              <button class="btn-nogo" id="nogoB">NO-GO</button>
+            </div>
+          </div>
+
+          <h4>Liked (Partner)</h4>
+          <div id="likesB"></div>
+
+          <h4 style="margin-top:12px">Journal (Partner)</h4>
+          <textarea id="journalB" placeholder="Private note..."></textarea>
+          <div style="margin-top:8px"><button id="saveB">Save</button></div>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top:12px">
+        <div class="col">
+          <h3>Matches</h3>
+          <div id="matchesList"></div>
+        </div>
+
+        <div class="col">
+          <h3>Global No-go (either partner)</h3>
+          <div id="globalNoGo"></div>
+          <h3 style="margin-top:12px">All Items (filtered)</h3>
+          <div id="allItems"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div><strong>Note:</strong> Demo only. No backend. No images to avoid explicit content. Use responsibly — 18+.</div>
+  </footer>
+</div>
+
+<script>
+/* ===== sample items (a subset) ===== */
+const ITEMS = [
+  {
+    id: "toy-001",
+    type: "toy",
+    name: "Couples' Dice Game",
+    description: "Fun dice game with romantic and intimate suggestions. Great for breaking routine and trying new things.",
+    category: "Games",
+    price_range: "$10-18",
+    difficulty: "beginner",
+    tags: ["games","dice","playful","variety"],
+    safety_notes: "Both partners can veto any suggestion. Focus on consent and comfort."
+  },
+  {
+    id: "toy-002",
+    type: "toy",
+    name: "Warming Lubricant",
+    description: "A gentle lubricant that increases sensitivity. Use small amounts and patch-test first.",
+    category: "Essentials",
+    difficulty: "beginner",
+    tags:

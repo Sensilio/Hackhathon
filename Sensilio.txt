@@ -1,0 +1,102 @@
+First page - na hlavni strance profilovka plus moznost reals/storicek
+	- toy of the day a practise of the day -> chci to delat nechci to delat. "petiminutova pusa" na zadni strane detailnejsi jak na tu polohu nebo jak na tu hracku 
+	- v momente kdy to dam doprava jakoze to chci, ale kdyz to dam doleva tak to nejde do no0go zony takze nekdy za nejakou dobu se to objevi znovu
+	- no go zona -> mit moznost 
+	- OMG yes - americka platforma - dost explicitne popsano co k practice potrebuji -> ilustrace explicitni
+	- obsah musi byt udrzitelny = jak a co ho bude generovat?
+	- mnozstvi obsahu - zatim minimalni dataset abychom ukazali funkcni prototyp
+	- stavime v AJ, jde to na global
+	- nabouravat tabu ve spolecnosti
+	- denik intimity -> 
+	- kvizy ? nice to have
+	- sdileny profil s partnerem
+		- moznost fotografie
+		- sharovany seznam hracek a praktik
+		- 
+	- dole ikony - + = urychleni zjednoduseni pristupnosti do partnerske sekce
+		- galerie - moje, tvorim jen pro sebe
+		- vyhledavani - ne na vyhledavani neceho jako konkretniho - napr. neco se mi zdalo a ja to chci vyzkouset realne a dej mi tipy jak k tomu pristoupit (AI terapeut ale drzet tema sexuality)
+	- go to market strategie
+	- 
+	
+	
+Takze appka je na co?
+	- sex ? porad mluvime o hrackach a praktikach, vidim inspiraci v OMG yes
+	- intimita a poznavani vlastni sexuality?
+	- toy of the day - kdyz to swipnu tak to musim uz udelat ten den?
+	- minimalizovat tabu ve spolecnosti - myslite jako praktiky a co je mozne v sexu?
+	- 
+
+CIL APLIKCE
+
+* gamifikovana aplikace
+* duolingo o sexu
+* sexkemon - to je uz moc
+* events
+
+napad:
+	* vstupni dotaznik - kdo jsi z co od appky chces
+	* v podstate to budou 4 rozhrani
+	* jaky je klic rozliseni 
+		- 
+		
+BUSINESS - 
+	- marketing
+	- 
+	
+	
+CO CHCEME OD APKY:
+
+1) uvodni obrazovka - logo spolecnosti ktere se rozplyne 
+2) onboarding - dotaznik
+3) homepage
+4) practice Tinder 
+
+
+
+Otevru aplikaci
+ 1) zobrazi se logo Sensilio (jako u VOS)
+ 2) zobrazi se mi obrazovka prihlaseni nebo zalozeni uctu
+ 3) vytvoreni uctu - verifikace overeni veku - datum narozeni (tim chceme my sbirat data u nasich uzivateli)
+	- chceme email, heslo , osloveni
+	- dotaznik:
+		- kdo jsem a co chci (zajima nas: pohlavi uzivatele, co chi - sam, muze, zemu, oboji, vice parnteru - penis vulva oboji)
+		- co me zajima
+			-> poznavani vlastniho tela a sexuality
+			-> uspokojeni sebe
+			-> uspokojeni partnera
+			-> oziveni dlouhodobeho vztahu
+			-> fakta o lidskem tele a sexualite
+			-> prohloubeni intimity s partnerem 
+ 4) HOME PAGE
+	- toy of the day -> vyber podle kategorie jeslti ma uzivatel vulbu nebo penis a zo je interested in - z cele databaze
+	- practice of the day -> ciste edukacni, sexualni praktika dne - z cee databaze 
+	- challenge of the day -> personalizovana - zamerena na to kdo jsem a co chci, vic mentalni prace
+		- challenge ovlivnena tim co mam v bucket listu 
+	- fun fact / story -> nahodne pro vsechny stejne
+	
+ 6) AI ASISTENT
+ 7) PARTNER ZONE
+	-kliknu na to a vyjede mi seznam partneru a moznost + pridat partnera (propojeni partneru na zaklade kodu - mam kod / vygenerovat kod)
+	- prvni krok v partner zone je vyber partnera - nabidnou se mi vsichni uzivatele se kterymi jsem sparovana\
+	- po vybrani cloveka se mi zobrazi moje profilovka + jeho profilovka a dal uz normalni menu:
+		- chat (regulerni chat s tou osobou - normalni chat jako na messengeru - fotka je rozmazana dokud prijemce nepotvrdi ze se muze zobrazit)
+		- couple's gallery 
+		- couple's toys - zobrazuji se matches
+		- couple's practices -zobrazuji se matches
+		- 
+ 8) PROFILE
+
+PROFILE 
+ - profile picture or avatar
+ - mam uroven (bude nam pocitat ta aplikace)
+ - zmena preferenci uvodniho dotazniku
+ - muj denik (INTIMNI DENIK)
+ - no go zone - na praktiky i hracky -> f
+ - wishlist
+ - library - toys and practice
+ - gallery
+ 
+ 
+ 
+ SECURITY - nikdy nejde udelat screenshot!!
